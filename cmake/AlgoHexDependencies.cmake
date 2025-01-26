@@ -19,24 +19,6 @@ if(NOT TARGET GMM::GMM)
     find_package(GMM REQUIRED)
 endif()
 
-if(NOT TARGET OpenVolumeMesh::OpenVolumeMesh)
-    FetchContent_Declare(openvolumemesh
-        GIT_REPOSITORY  https://www.graphics.rwth-aachen.de:9000/OpenVolumeMesh/OpenVolumeMesh.git
-        GIT_TAG v3.3.0
-        SOURCE_DIR "${EXTERNAL_DIR}/OpenVolumeMesh"
-        )
-    FetchContent_MakeAvailable(openvolumemesh)
-endif()
-
-if(NOT TARGET HexEx)
-    FetchContent_Declare(hexex
-        GIT_REPOSITORY https://www.graphics.rwth-aachen.de:9000/HexEx/libHexEx.git
-        GIT_TAG        algohex
-        SOURCE_DIR "${EXTERNAL_DIR}/libHexEx"
-        )
-    FetchContent_MakeAvailable(hexex)
-endif()
-
 if(NOT TARGET Eigen3::Eigen)
     FetchContent_Declare(eigen
         #GIT_REPOSITORY https://gitlab.com/libeigen/eigen
@@ -95,13 +77,4 @@ if(NOT TARGET CLI11::CLI11)
         SOURCE_DIR "${EXTERNAL_DIR}/CLI11"
         )
     FetchContent_MakeAvailable(cli11)
-endif()
-
-if(NOT TARGET QGP3D:QGP3D)
-    FetchContent_Declare(qgp3d
-        GIT_REPOSITORY https://github.com/HendrikBrueckler/QGP3D
-        GIT_TAG        ace72a30ed21672235f9868b42c858db273445d2 # main branch on 2024-01-16
-        SOURCE_DIR "${EXTERNAL_DIR}/QGP3D"
-        )
-    FetchContent_MakeAvailable(qgp3d)
 endif()

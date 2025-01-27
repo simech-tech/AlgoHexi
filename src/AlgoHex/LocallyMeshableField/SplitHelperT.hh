@@ -1043,9 +1043,9 @@ public:
         auto vh_t = mesh.halfedge(he0).to_vertex();
 
         std::stack<VH> st_vhs;
-        if (!is_singular_node(mesh, valence, vh_t))
+        if (!AlgoHex::is_singular_node(mesh, valence, vh_t))
           st_vhs.push(vh_t);
-        if (!is_singular_node(mesh, valence, vh_s))
+        if (!AlgoHex::is_singular_node(mesh, valence, vh_s))
           st_vhs.push(vh_s);
         //trace back until the boundary or an edge which is conquered, then trace front
         while (!st_vhs.empty())
@@ -1063,7 +1063,7 @@ public:
               label[eh_og] = i_label;
 
               auto vh_next = mesh.halfedge(*voh_it).to_vertex();
-              if (!is_singular_node(mesh, valence, vh_next))
+              if (!AlgoHex::is_singular_node(mesh, valence, vh_next))
                 st_vhs.push(vh_next);
             }
           }

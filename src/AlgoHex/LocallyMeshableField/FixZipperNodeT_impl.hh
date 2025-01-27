@@ -897,7 +897,7 @@ FixZipperNodeT<MeshT>::get_fixable_zipper_nodes(const bool _include_all)
     //fix one zipper node of the ones connected to high valence feature nodes at a time
     if (feature_node_[vhi])
     {
-      if (n_incident_feature_edges(mesh_, feature_edge_, vhi) > 5)
+      if (AlgoHex::n_incident_feature_edges(mesh_, feature_edge_, vhi) > 5)
       {
         hv_nodes.push_back(vhi);
       }

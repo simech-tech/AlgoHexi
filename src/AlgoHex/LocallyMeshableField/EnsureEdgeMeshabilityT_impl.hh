@@ -106,7 +106,7 @@ fix_interior_compound_singular_edge(const HEH _heh, const bool _split)
     bool is_ft_node5 = false;
     if (feature_node_[vht])
     {
-      if (n_incident_feature_edges(mesh_, feature_edge_, vht) >= 5)
+      if (AlgoHex::n_incident_feature_edges(mesh_, feature_edge_, vht) >= 5)
         is_ft_node5 = true;
     }
     if (is_ft_node5 && val == -2)
@@ -488,7 +488,7 @@ EnsureEdgeMeshabilityT<MeshT>::best_transition_idx(const HEH _heh, const HFH _hf
   bool is_ft_node5 = false;
   if (feature_node_[vht])
   {
-    if (n_incident_feature_edges(mesh_, feature_edge_, vht) >= 5)
+    if (AlgoHex::n_incident_feature_edges(mesh_, feature_edge_, vht) >= 5)
       is_ft_node5 = true;
   }
 

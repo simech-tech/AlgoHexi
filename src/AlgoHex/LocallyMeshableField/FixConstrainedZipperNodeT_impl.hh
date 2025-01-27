@@ -560,7 +560,7 @@ FixConstrainedZipperNodeT<MeshT>::fixable_constrained_zipper_node_type(const VH 
           }
         }
       }
-      else if (feature_node_[_vh] && n_incident_feature_edges(mesh_, feature_edge_, _vh) >= 5)
+      else if (feature_node_[_vh] && AlgoHex::n_incident_feature_edges(mesh_, feature_edge_, _vh) >= 5)
       {
         HFH hf_s = *mesh_.hehf_iter(hehi);
         CH ch_s = mesh_.incident_cell(mesh_.opposite_halfface_handle(hf_s));
@@ -767,7 +767,7 @@ FixConstrainedZipperNodeT<MeshT>::fixable_constrained_zipper_node_type(const HEH
         }
       }
     }
-    else if (feature_node_[vh_f] && n_incident_feature_edges(mesh_, feature_edge_, vh_f) >= 5)
+    else if (feature_node_[vh_f] && AlgoHex::n_incident_feature_edges(mesh_, feature_edge_, vh_f) >= 5)
     {
       HFH hf_s = *mesh_.hehf_iter(_heh);
       CH ch_s = mesh_.incident_cell(mesh_.opposite_halfface_handle(hf_s));
@@ -1517,7 +1517,7 @@ FixConstrainedZipperNodeT<MeshT>::search_for_guides_along_singular_arc(const HEH
     return std::vector<GDINFO>{};
   }
   //when at feature node, it's not flat, e.g. i21b
-  if (n_incident_feature_edges(mesh_, feature_edge_, vh_f) <= 5)
+  if (AlgoHex::n_incident_feature_edges(mesh_, feature_edge_, vh_f) <= 5)
   {
     ALGOHEX_DEBUG_ONLY(std::cerr << " he kept ? " << keep_on_feature_face_[mesh_.edge_handle(he_s)];)
     if (!keep_on_feature_face_[mesh_.edge_handle(he_s)])

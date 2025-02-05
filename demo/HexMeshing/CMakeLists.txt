@@ -16,6 +16,8 @@ endif ()
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED YES)
 
+add_compile_definitions(GEO_STATIC_LIBS)
+
 add_executable(HexMeshing
         ./HexMeshing.cc
         ./HexMeshing.hh

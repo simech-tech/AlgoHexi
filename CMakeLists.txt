@@ -257,11 +257,11 @@ endif ()
 
 target_link_libraries(AlgoHex PUBLIC
         OpenVolumeMesh::OpenVolumeMesh
-        CoMISo::CoMISo
         HexEx::HexEx
+        QGP3D::QGP3D
+        CoMISo::CoMISo
         Eigen3::Eigen
         GMM::GMM
-        QGP3D::QGP3D
         tinyad::tinyad
         )
 
@@ -284,6 +284,8 @@ target_include_directories(AlgoHex
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/src>
         $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}/src>
         $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>
+        "${ALGOHEX_EXTERNAL}/OpenVolumeMesh/src"
+        "${ALGOHEX_EXTERNAL}/libHexEx/src"
         #    PRIVATE
         #"${CMAKE_CURRENT_BINARY_DIR}/src"
         )

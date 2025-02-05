@@ -222,6 +222,7 @@ target_compile_definitions(AlgoHex
         # we currently cannot instantiate the template for dllexport.
         # We'll catch the compile time asserts on the other compilers.
         "$<$<CXX_COMPILER_ID:MSVC>:EIGEN_NO_STATIC_ASSERT>"
+        "$<$<CXX_COMPILER_ID:MSVC>:_USE_MATH_DEFINES>"
         PRIVATE
         "GEO_STATIC_LIBS" # for OpenNL
         )
@@ -289,6 +290,7 @@ target_include_directories(AlgoHex
 
 option(ALGOHEX_BUILD_DEMO "Build AlgoHex demo commandline tool" ${ALGOHEX_IS_ROOT})
 if (ALGOHEX_BUILD_DEMO)
+    add_subdirectory(demo/HexExCL)
     add_subdirectory(demo/HexMeshing)
     add_subdirectory(demo/LocalMeshabilityCheck)
 endif ()

@@ -11,22 +11,29 @@
 namespace AlgoHex
 {
 
-const std::vector<SHProjectorRay::Seed> SHProjectorRay::seeds5{{
-                                                                       Quaternion(Eigen::AngleAxisd(0, Vec3d::UnitX())),
-                                                                       Quaternion(Eigen::AngleAxisd(M_PI / 4.,
-                                                                                                    Vec3d::UnitX())),
-                                                                       Quaternion(Eigen::AngleAxisd(M_PI / 4.,
-                                                                                                    Vec3d::UnitY())),
-                                                                       Quaternion(Eigen::AngleAxisd(M_PI / 4.,
-                                                                                                    Vec3d::UnitZ())),
-                                                                       Quaternion(Eigen::AngleAxisd(M_PI / 4.,
-                                                                                                    Vec3d(1., 1.,
-                                                                                                          0.).normalized()))
-                                                               }};
+// const std::vector<SHProjectorRay::Seed> SHProjectorRay::seeds5{{
+//                                                                        Quaternion(Eigen::AngleAxisd(0, Vec3d::UnitX())),
+//                                                                        Quaternion(Eigen::AngleAxisd(M_PI / 4.,
+//                                                                                                     Vec3d::UnitX())),
+//                                                                        Quaternion(Eigen::AngleAxisd(M_PI / 4.,
+//                                                                                                     Vec3d::UnitY())),
+//                                                                        Quaternion(Eigen::AngleAxisd(M_PI / 4.,
+//                                                                                                     Vec3d::UnitZ())),
+//                                                                        Quaternion(Eigen::AngleAxisd(M_PI / 4.,
+//                                                                                                     Vec3d(1., 1.,
+//                                                                                                           0.).normalized()))
+//                                                                }};
 
 SHProjectionResult
 SHProjectorRay::project(const SHCoeffs &sh_coeffs)
 {
+  const std::vector<SHProjectorRay::Seed> seeds5 = { {
+        Quaternion(Eigen::AngleAxisd(0, Vec3d::UnitX())),
+        Quaternion(Eigen::AngleAxisd(M_PI / 4., Vec3d::UnitX())),
+        Quaternion(Eigen::AngleAxisd(M_PI / 4., Vec3d::UnitY())),
+        Quaternion(Eigen::AngleAxisd(M_PI / 4., Vec3d::UnitZ())),
+        Quaternion(Eigen::AngleAxisd(M_PI / 4., Vec3d(1., 1., 0.).normalized()))
+      } };
   return project_with_seeds(sh_coeffs, seeds5);
 }
 

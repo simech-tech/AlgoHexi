@@ -82,7 +82,7 @@ public:
                     const std::vector<Seed> &seeds) const;
 
 private:
-  static const std::vector<Seed> seeds5;
+  // static const std::vector<Seed> seeds5;
 
   SHProjectionResult project_using_closest_seed(const SHCoeffs &sh_coeffs,
                                                 const std::vector<Seed> &seeds) const;

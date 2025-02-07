@@ -153,7 +153,7 @@ project(const bool _original_projection)
     projector_.set_seed_selection(SHProjectorRay::BestSeed);
   }
 
-#pragma omp parallel for schedule (dynamic, 16)
+// #pragma omp parallel for schedule (dynamic, 16)
   for (int i = 0; i < (int) num_vertices_; ++i)
   {
     VH vh(i);

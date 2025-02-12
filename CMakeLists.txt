@@ -292,7 +292,7 @@ target_include_directories(AlgoHex
 
 option(ALGOHEX_BUILD_DEMO "Build AlgoHex demo commandline tool" ${ALGOHEX_IS_ROOT})
 if (ALGOHEX_BUILD_DEMO)
-    add_subdirectory(demo/HexExCL)
+    add_subdirectory(demo/HexTool)
     add_subdirectory(demo/HexMeshing)
     add_subdirectory(demo/LocalMeshabilityCheck)
 endif ()
